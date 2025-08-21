@@ -7,10 +7,15 @@ from ascii_art import STAGES
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
 
 def get_random_word():
-    """Selects a random word from the list."""
+    """Selects and returns a random word from the list."""
     return WORDS[random.randint(0, len(WORDS) - 1)]
 
 def display_game_state(mistakes, secret_word, guessed_letters):
+    """
+    Displays the current state of the game:
+    - Snowman ASCII art based on mistakes
+    - The secret word with guessed letters revealed
+    """
     print(STAGES[mistakes])
     display_word = ""
     for letter in secret_word:
@@ -22,6 +27,13 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 
 
 def play_game():
+    """
+    Runs the main Snowman game loop. Handles:
+    - Input validation
+    - Tracking guessed letters
+    - Win/loss detection
+    - Replay option for multiple rounds
+    """
     secret_word = get_random_word()
     mistakes = 0
     guessed_letters = []
