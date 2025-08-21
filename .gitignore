@@ -1,4 +1,6 @@
-# Byte-compiled / optimized / DLL files
+#JetBrains IDEs
+.idea
+# Byte-compilgeted / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
